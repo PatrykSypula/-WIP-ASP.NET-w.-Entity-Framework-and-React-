@@ -7,11 +7,13 @@ namespace ASPNET_EF.Models
     {
         [Key]
         public int Id { get; set; }
+        [Column(TypeName = "varchar(100)")]
         public DateTime SessionDate { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "int")]
         public int GoodAnswers { get; set; }
+        [Column(TypeName = "int")]
         public int AllAnswers { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(10)")]
         public string Percentage { get; set; }
         [Column(TypeName = "int")]
         public int DictionaryId { get; set; }

@@ -7,9 +7,9 @@ namespace ASPNET_EF.Models
     {
         [Key]
         public int Id { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(100)")]
         public string DictionaryName { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(2)")]
         public string DictionaryLevel { get; set; }
         [Column(TypeName = "int")]
         public int IsDefaultDictionary { get; set; }

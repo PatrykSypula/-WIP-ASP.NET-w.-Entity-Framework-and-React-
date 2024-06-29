@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ASPNET.Migrations;
 using ASPNET_EF.Models;
 
 namespace ASPNET.Controllers
@@ -22,7 +21,7 @@ namespace ASPNET.Controllers
         // GET: Dictionaries
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Dictionaries.Include(d => d.User);
+            var applicationDbContext = _context.Dictionaries.Include(d => d.User).Include(d => d.Words);
             return View(await applicationDbContext.ToListAsync());
         }
 

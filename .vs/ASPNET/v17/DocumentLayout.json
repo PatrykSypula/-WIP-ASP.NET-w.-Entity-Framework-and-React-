@@ -1,7 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|c:\\users\\patry\\source\\repos\\patryksypula\\wip_asp.net_entityframework\\aspnet\\views\\dictionaries\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|solutionrelative:aspnet\\views\\dictionaries\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|c:\\users\\patry\\source\\repos\\patryksypula\\wip_asp.net_entityframework\\aspnet\\models\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|solutionrelative:aspnet\\models\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|c:\\users\\patry\\source\\repos\\patryksypula\\wip_asp.net_entityframework\\aspnet\\controllers\\dictionariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|solutionrelative:aspnet\\controllers\\dictionariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|c:\\users\\patry\\source\\repos\\patryksypula\\wip_asp.net_entityframework\\aspnet\\models\\sessionstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|solutionrelative:aspnet\\models\\sessionstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|c:\\users\\patry\\source\\repos\\patryksypula\\wip_asp.net_entityframework\\aspnet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|solutionrelative:aspnet\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|c:\\users\\patry\\source\\repos\\patryksypula\\wip_asp.net_entityframework\\aspnet\\models\\subscribeddictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|solutionrelative:aspnet\\models\\subscribeddictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|c:\\users\\patry\\source\\repos\\patryksypula\\wip_asp.net_entityframework\\aspnet\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{172897AE-31A6-4A6D-9EFC-95E04D36E2E7}|ASPNET\\ASPNET.csproj|solutionrelative:aspnet\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,6 +63,97 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Views\\Dictionaries\\Index.cshtml",
+              "RelativeDocumentMoniker": "ASPNET\\Views\\Dictionaries\\Index.cshtml",
+              "ToolTip": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Views\\Dictionaries\\Index.cshtml",
+              "RelativeToolTip": "ASPNET\\Views\\Dictionaries\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-29T18:33:22.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SessionStatistics.cs",
+              "DocumentMoniker": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\SessionStatistics.cs",
+              "RelativeDocumentMoniker": "ASPNET\\Models\\SessionStatistics.cs",
+              "ToolTip": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\SessionStatistics.cs",
+              "RelativeToolTip": "ASPNET\\Models\\SessionStatistics.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwA8AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T18:28:56.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SubscribedDictionary.cs",
+              "DocumentMoniker": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\SubscribedDictionary.cs",
+              "RelativeDocumentMoniker": "ASPNET\\Models\\SubscribedDictionary.cs",
+              "ToolTip": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\SubscribedDictionary.cs",
+              "RelativeToolTip": "ASPNET\\Models\\SubscribedDictionary.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T18:28:54.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Words.cs",
+              "DocumentMoniker": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\Words.cs",
+              "RelativeDocumentMoniker": "ASPNET\\Models\\Words.cs",
+              "ToolTip": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\Words.cs",
+              "RelativeToolTip": "ASPNET\\Models\\Words.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T18:22:38.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ASPNET\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Models\\User.cs",
+              "RelativeToolTip": "ASPNET\\Models\\User.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwAkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T18:15:36.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Program.cs",
+              "RelativeDocumentMoniker": "ASPNET\\Program.cs",
+              "ToolTip": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Program.cs",
+              "RelativeToolTip": "ASPNET\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T16:55:39.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DictionariesController.cs",
+              "DocumentMoniker": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Controllers\\DictionariesController.cs",
+              "RelativeDocumentMoniker": "ASPNET\\Controllers\\DictionariesController.cs",
+              "ToolTip": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\WIP_ASP.NET_EntityFramework\\ASPNET\\Controllers\\DictionariesController.cs",
+              "RelativeToolTip": "ASPNET\\Controllers\\DictionariesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T16:55:29.321Z",
+              "EditorCaption": ""
             }
           ]
         },

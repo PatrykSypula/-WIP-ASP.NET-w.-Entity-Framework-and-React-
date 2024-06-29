@@ -1,7 +1,8 @@
 ﻿using ASPNET_EF.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ASPNET.Migrations
+namespace ASPNET
 {
     public class ApplicationDbContext : DbContext
     {
@@ -47,9 +48,9 @@ namespace ASPNET.Migrations
                 .HasForeignKey(s => s.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
             });
+
             //base.OnModelCreating(modelBuilder);
 
         }
-
     }
 }

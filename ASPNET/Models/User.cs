@@ -7,11 +7,11 @@ namespace ASPNET_EF.Models
     {
         [Key]
         public int Id { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(100)")]
         public string Login { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(100)")]
         public string Password { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar(100)")]
         public string Email { get; set; }
         [Column(TypeName = "int")]
         public int IsActive { get; set; }

@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -17,9 +16,9 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(type: "varchar", nullable: false),
-                    Password = table.Column<string>(type: "varchar", nullable: false),
-                    Email = table.Column<string>(type: "varchar", nullable: false),
+                    Login = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Password = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Email = table.Column<string>(type: "varchar(100)", nullable: false),
                     IsActive = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -33,8 +32,8 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DictionaryName = table.Column<string>(type: "varchar", nullable: false),
-                    DictionaryLevel = table.Column<string>(type: "varchar", nullable: false),
+                    DictionaryName = table.Column<string>(type: "varchar(100)", nullable: false),
+                    DictionaryLevel = table.Column<string>(type: "varchar(2)", nullable: false),
                     IsDefaultDictionary = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -55,10 +54,10 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SessionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    GoodAnswers = table.Column<string>(type: "varchar(64)", nullable: false),
+                    SessionDate = table.Column<string>(type: "varchar(100)", nullable: false),
+                    GoodAnswers = table.Column<int>(type: "int", nullable: false),
                     AllAnswers = table.Column<int>(type: "int", nullable: false),
-                    Percentage = table.Column<string>(type: "varchar", nullable: false),
+                    Percentage = table.Column<string>(type: "varchar(10)", nullable: false),
                     DictionaryId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -109,8 +108,8 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    WordPolish = table.Column<string>(type: "varchar", nullable: false),
-                    WordTranslated = table.Column<string>(type: "varchar", nullable: false),
+                    WordPolish = table.Column<string>(type: "varchar(100)", nullable: false),
+                    WordTranslated = table.Column<string>(type: "varchar(100)", nullable: false),
                     DictionaryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -153,6 +152,8 @@ namespace ASPNET.Migrations
                 name: "IX_Words_DictionaryId",
                 table: "Words",
                 column: "DictionaryId");
+            var sql = File.ReadAllText("Migrations\\OnCreateData.sql");
+            migrationBuilder.Sql(sql);
         }
 
         /// <inheritdoc />

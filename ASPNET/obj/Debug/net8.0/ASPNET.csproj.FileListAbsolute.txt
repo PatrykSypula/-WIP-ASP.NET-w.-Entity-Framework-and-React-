@@ -502,3 +502,4 @@ C:\Users\patry\Source\Repos\PatrykSypula\WIP_ASP.NET_EntityFramework\ASPNET\obj\
 C:\Users\patry\Source\Repos\PatrykSypula\WIP_ASP.NET_EntityFramework\ASPNET\obj\Debug\net8.0\ASPNET.pdb
 C:\Users\patry\Source\Repos\PatrykSypula\WIP_ASP.NET_EntityFramework\ASPNET\obj\Debug\net8.0\ASPNET.genruntimeconfig.cache
 C:\Users\patry\Source\Repos\PatrykSypula\WIP_ASP.NET_EntityFramework\ASPNET\obj\Debug\net8.0\ref\ASPNET.dll
+C:\Users\patry\Source\Repos\PatrykSypula\WIP_ASP.NET_EntityFramework\ASPNET\obj\Debug\net8.0\ASPNET.sourcelink.json
