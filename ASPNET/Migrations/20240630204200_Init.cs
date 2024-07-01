@@ -5,11 +5,24 @@
 namespace ASPNET.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialSetup : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "DictionaryLevelValues",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DictionaryLevel = table.Column<string>(type: "varchar(2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DictionaryLevelValues", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
@@ -33,13 +46,20 @@ namespace ASPNET.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DictionaryName = table.Column<string>(type: "varchar(100)", nullable: false),
-                    DictionaryLevel = table.Column<string>(type: "varchar(2)", nullable: false),
+                    DictionaryLevelId = table.Column<int>(type: "int", nullable: false),
+                    DictionaryDescription = table.Column<string>(type: "varchar(100)", nullable: false),
                     IsDefaultDictionary = table.Column<int>(type: "int", nullable: false),
+                    IsPublic = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Dictionaries", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Dictionaries_DictionaryLevelValues_DictionaryLevelId",
+                        column: x => x.DictionaryLevelId,
+                        principalTable: "DictionaryLevelValues",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Dictionaries_Users_UserId",
                         column: x => x.UserId,
@@ -124,6 +144,11 @@ namespace ASPNET.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Dictionaries_DictionaryLevelId",
+                table: "Dictionaries",
+                column: "DictionaryLevelId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Dictionaries_UserId",
                 table: "Dictionaries",
                 column: "UserId");
@@ -152,9 +177,9 @@ namespace ASPNET.Migrations
                 name: "IX_Words_DictionaryId",
                 table: "Words",
                 column: "DictionaryId");
-            var sql = File.ReadAllText("Migrations\\OnCreateData.sql");
-            migrationBuilder.Sql(sql);
-        }
+			var sql = File.ReadAllText("Migrations\\OnCreateData.sql");
+			migrationBuilder.Sql(sql);
+		}
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -170,6 +195,9 @@ namespace ASPNET.Migrations
 
             migrationBuilder.DropTable(
                 name: "Dictionaries");
+
+            migrationBuilder.DropTable(
+                name: "DictionaryLevelValues");
 
             migrationBuilder.DropTable(
                 name: "Users");

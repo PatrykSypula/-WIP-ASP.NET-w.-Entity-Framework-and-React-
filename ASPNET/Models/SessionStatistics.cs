@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ASPNET_EF.Models
+namespace ASPNET.Models
 {
     public class SessionStatistics
     {

@@ -54,12 +54,64 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/SessionStatistics/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblN0YXRpc3RpY3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/SessionStatistics/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblN0YXRpc3RpY3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/SessionStatistics/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblN0YXRpc3RpY3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/SessionStatistics/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblN0YXRpc3RpY3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/SessionStatistics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblN0YXRpc3RpY3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Session/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Session/Learn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vzc2lvblxMZWFybi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Words/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29yZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Words/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29yZHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Words/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29yZHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Words/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29yZHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Words/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29yZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/Words/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29yZHNcVGVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/patry/Source/Repos/PatrykSypula/WIP_ASP.NET_EntityFramework/ASPNET/Views/_ViewImports.cshtml]

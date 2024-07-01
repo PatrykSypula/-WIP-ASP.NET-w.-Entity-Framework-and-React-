@@ -1,8 +1,8 @@
-﻿using ASPNET_EF.Models;
+﻿using ASPNET.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ASPNET
+namespace ASPNET.Migrations
 {
     public class ApplicationDbContext : DbContext
     {
@@ -31,7 +31,12 @@ namespace ASPNET
                 cs.HasMany(d => d.SubscribedDictionaries)
                 .WithOne(sc => sc.Dictionary)
                 .HasForeignKey(sc => sc.DictionaryId);
-            });
+
+                cs.HasOne(d => d.DictionaryLevelValues)
+                .WithMany(dlv => dlv.Dictionaries)
+                .HasForeignKey(d => d.DictionaryLevelId);
+
+			});
             modelBuilder.Entity<User>(us =>
             {
                 us.HasMany(u => u.Dictionaries)

@@ -17,16 +17,27 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" role="button" data-bs-toggle="dropdown">Home</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Dictionaries" asp-action="Index">Słowniki</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Dictionaries" asp-action="Index">Dictionaries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Words" asp-action="Index">Words</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Session" asp-action="Index">Session</a>
                         </li>
                     </ul>
                 </div>

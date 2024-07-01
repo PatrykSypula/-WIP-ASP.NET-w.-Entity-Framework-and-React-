@@ -1,4 +1,4 @@
-using ASPNET;
+using ASPNET.Migrations;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,9 +23,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.MapControllers();
 app.UseRouting();
-
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",

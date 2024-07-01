@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ASPNET",
+    "\\ASPNET\\Controllers",
+    "\\ASPNET\\Migrations",
+    "\\ASPNET\\Views",
+    "\\ASPNET\\Views\\Dictionaries"
   ],
+  "SelectedNode": "\\ASPNET\\Migrations\\ApplicationDbContext.cs",
   "PreviewInSolutionExplorer": false
 }

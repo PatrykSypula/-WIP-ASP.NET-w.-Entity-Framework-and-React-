@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ASPNET_EF.Models;
+using ASPNET.Models;
+using ASPNET.Migrations;
+using System.Data;
 
 namespace ASPNET.Controllers
 {
@@ -21,12 +23,12 @@ namespace ASPNET.Controllers
         // GET: Dictionaries
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Dictionaries.Include(d => d.User).Include(d => d.Words);
-            return View(await applicationDbContext.ToListAsync());
+			var applicationDbContext = _context.Dictionaries.Include(d => d.User).Include(d => d.Words).Include(d => d.DictionaryLevelValues);
+			return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Dictionaries/Details/5
-        public async Task<IActionResult> Details(int? id)
+		// GET: Dictionaries/Details/5
+		public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -34,6 +36,7 @@ namespace ASPNET.Controllers
             }
 
             var dictionaries = await _context.Dictionaries
+                .Include(d => d.DictionaryLevelValues)
                 .Include(d => d.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (dictionaries == null)
@@ -47,6 +50,7 @@ namespace ASPNET.Controllers
         // GET: Dictionaries/Create
         public IActionResult Create()
         {
+            ViewData["DictionaryLevelId"] = new SelectList(_context.Set<DictionaryLevelValues>(), "Id", "Id");
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return View();
         }
@@ -54,9 +58,9 @@ namespace ASPNET.Controllers
         // POST: Dictionaries/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DictionaryName,DictionaryLevel,IsDefaultDictionary,UserId")] Dictionaries dictionaries)
+        public async Task<IActionResult> Create([Bind("Id,DictionaryName,DictionaryLevelId,DictionaryDescription,IsDefaultDictionary,IsPublic,UserId")] Dictionaries dictionaries)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +68,7 @@ namespace ASPNET.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DictionaryLevelId"] = new SelectList(_context.Set<DictionaryLevelValues>(), "Id", "Id", dictionaries.DictionaryLevelId);
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", dictionaries.UserId);
             return View(dictionaries);
         }
@@ -81,6 +86,7 @@ namespace ASPNET.Controllers
             {
                 return NotFound();
             }
+            ViewData["DictionaryLevelId"] = new SelectList(_context.Set<DictionaryLevelValues>(), "Id", "Id", dictionaries.DictionaryLevelId);
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", dictionaries.UserId);
             return View(dictionaries);
         }
@@ -88,16 +94,15 @@ namespace ASPNET.Controllers
         // POST: Dictionaries/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DictionaryName,DictionaryLevel,IsDefaultDictionary,UserId")] Dictionaries dictionaries)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DictionaryName,DictionaryLevelId,DictionaryDescription,IsDefaultDictionary,IsPublic,UserId")] Dictionaries dictionaries)
         {
             if (id != dictionaries.Id)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+			if (ModelState.IsValid)
             {
                 try
                 {
@@ -117,6 +122,7 @@ namespace ASPNET.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DictionaryLevelId"] = new SelectList(_context.Set<DictionaryLevelValues>(), "Id", "Id", dictionaries.DictionaryLevelId);
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", dictionaries.UserId);
             return View(dictionaries);
         }
@@ -130,6 +136,7 @@ namespace ASPNET.Controllers
             }
 
             var dictionaries = await _context.Dictionaries
+                .Include(d => d.DictionaryLevelValues)
                 .Include(d => d.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (dictionaries == null)

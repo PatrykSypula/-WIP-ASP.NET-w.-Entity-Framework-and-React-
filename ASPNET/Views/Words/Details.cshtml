@@ -1,0 +1,37 @@
+﻿@model ASPNET.Models.Words
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Words</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WordPolish)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WordPolish)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WordTranslated)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WordTranslated)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dictionary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dictionary.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    <a asp-action="Test">Edit</a>
+    <a asp-action="Index">Back to List</a>
+</div>
