@@ -5,6 +5,7 @@
     var randomWord = ViewBag.RandomWord as ASPNET.Models.Words;
     var goodAnswers = ViewBag.GoodAnswers;
     var allAnswers = ViewBag.AllAnswers;
+    var id = ViewBag.Id;
 }
 
 <h1>Words List</h1>
@@ -40,7 +41,9 @@
 <div>
     <h4>All Words</h4>
     <hr />
-    <form asp-action="Test" method="post">
+    <form asp-action="Study" method="post">
+        <button type="submit" name="action" class="btn btn-primary" value="SendWithoutChanges">I dont know answer</button>
+        <button type="submit" name="action" class="btn btn-warning" value="RemoveRandomWord">I know answer</button>
         @for (int i = 0; i < Model.Count; i++)
         {
             <dl class="row">
@@ -75,8 +78,8 @@
             <input type="hidden" name="randomWordId" value="@randomWord.Id" />
         }
         <input type="hidden" name="goodAnswers" value="@goodAnswers" />
+        <input type="hidden" name="id" value="@id" />
         <input type="hidden" name="allAnswers" value="@allAnswers" />
-        <button type="submit" name="action" value="SendWithoutChanges">Send Back</button>
-        <button type="submit" name="action" value="RemoveRandomWord">Remove Random Word and Send Back</button>
+        
     </form>
 </div>

@@ -27,7 +27,7 @@ namespace ASPNET.Controllers
 		}
 
         [HttpGet]
-        public async Task<IActionResult> Learn(int? id)
+        public async Task<IActionResult> Study(int? id)
         {
             var words = await _context.Words.Include(w => w.Dictionary).Where(d => d.DictionaryId == id).ToListAsync();
             var randomWord = GetRandomWord(words);
@@ -36,12 +36,13 @@ namespace ASPNET.Controllers
             ViewBag.GoodAnswers = 0;
             ViewBag.AllAnswers = 0;
             ViewBag.RandomWord = randomWord;
+            ViewBag.Id = id;
 
             return View(words);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Learn(List<Words> words, string action, int? randomWordId, int goodAnswers, int allAnswers)
+        public async Task<IActionResult> Study(List<Words> words, string action, int? randomWordId, int goodAnswers, int allAnswers, int id)
         {
             allAnswers++; // Zwiększ AllAnswers za każdym razem, gdy jest przesyłane
 
@@ -56,20 +57,20 @@ namespace ASPNET.Controllers
                     if (!words.Any())
                     {
                         // Dodawanie statystyk sesji, gdy lista słów jest pusta
-                        var sessionStatistics = new SessionStatistics
+                        var Statistics = new Statistics
                         {
                             SessionDate = DateTime.Now,
                             GoodAnswers = goodAnswers,
                             AllAnswers = allAnswers,
                             Percentage = ((double)goodAnswers / allAnswers).ToString("P"), // Obliczanie procentu
-                            DictionaryId = 2, // Przykładowa wartość, dostosuj według potrzeb
+                            DictionaryId = id, // Przykładowa wartość, dostosuj według potrzeb
                             UserId = 1 // Przykładowa wartość, dostosuj według potrzeb
                         };
 
-                        _context.SessionStatistics.Add(sessionStatistics);
+                        _context.Statistics.Add(Statistics);
                         await _context.SaveChangesAsync();
 
-                        return RedirectToAction("Details", "SessionStatistics", new { id = sessionStatistics.Id });
+                        return RedirectToAction("Details", "Statistics", new { id = Statistics.Id });
                     }
                 }
             }
@@ -78,20 +79,10 @@ namespace ASPNET.Controllers
             ViewBag.RandomWord = randomWord;
             ViewBag.GoodAnswers = goodAnswers;
             ViewBag.AllAnswers = allAnswers;
+            ViewBag.Id = id;
 
             return View(words);
         }
-
-        //[HttpGet]
-        //public async Task<IActionResult> SessionStatistics(int id)
-        //{
-        //    var statistics = await _context.SessionStatistics.Include(s => s.Dictionary).Include(s => s.User).FirstOrDefaultAsync(s => s.Id == id);
-        //    if (statistics == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(statistics);
-        //}
 
         private Words GetRandomWord(List<Words> words)
         {

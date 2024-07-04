@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ASPNET.Models
 {
-    public class SessionStatistics
+    public class Statistics
     {
         [Key]
         public int Id { get; set; }

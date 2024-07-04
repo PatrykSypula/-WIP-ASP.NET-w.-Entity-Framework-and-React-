@@ -16,7 +16,7 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DictionaryLevel = table.Column<string>(type: "varchar(2)", nullable: false)
+                    DictionaryLevel = table.Column<string>(type: "varchar(2)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -29,9 +29,9 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(type: "varchar(100)", nullable: false),
-                    Password = table.Column<string>(type: "varchar(100)", nullable: false),
-                    Email = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Login = table.Column<string>(type: "varchar(100)", nullable: true),
+                    Password = table.Column<string>(type: "varchar(100)", nullable: true),
+                    Email = table.Column<string>(type: "varchar(100)", nullable: true),
                     IsActive = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -45,9 +45,9 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DictionaryName = table.Column<string>(type: "varchar(100)", nullable: false),
+                    DictionaryName = table.Column<string>(type: "varchar(100)", nullable: true),
                     DictionaryLevelId = table.Column<int>(type: "int", nullable: false),
-                    DictionaryDescription = table.Column<string>(type: "varchar(100)", nullable: false),
+                    DictionaryDescription = table.Column<string>(type: "varchar(100)", nullable: true),
                     IsDefaultDictionary = table.Column<int>(type: "int", nullable: false),
                     IsPublic = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
@@ -59,7 +59,8 @@ namespace ASPNET.Migrations
                         name: "FK_Dictionaries_DictionaryLevelValues_DictionaryLevelId",
                         column: x => x.DictionaryLevelId,
                         principalTable: "DictionaryLevelValues",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Dictionaries_Users_UserId",
                         column: x => x.UserId,
@@ -69,7 +70,7 @@ namespace ASPNET.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SessionStatistics",
+                name: "Statistics",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -77,21 +78,21 @@ namespace ASPNET.Migrations
                     SessionDate = table.Column<string>(type: "varchar(100)", nullable: false),
                     GoodAnswers = table.Column<int>(type: "int", nullable: false),
                     AllAnswers = table.Column<int>(type: "int", nullable: false),
-                    Percentage = table.Column<string>(type: "varchar(10)", nullable: false),
+                    Percentage = table.Column<string>(type: "varchar(10)", nullable: true),
                     DictionaryId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SessionStatistics", x => x.Id);
+                    table.PrimaryKey("PK_Statistics", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SessionStatistics_Dictionaries_DictionaryId",
+                        name: "FK_Statistics_Dictionaries_DictionaryId",
                         column: x => x.DictionaryId,
                         principalTable: "Dictionaries",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SessionStatistics_Users_UserId",
+                        name: "FK_Statistics_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
@@ -128,8 +129,8 @@ namespace ASPNET.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    WordPolish = table.Column<string>(type: "varchar(100)", nullable: false),
-                    WordTranslated = table.Column<string>(type: "varchar(100)", nullable: false),
+                    WordPolish = table.Column<string>(type: "varchar(100)", nullable: true),
+                    WordTranslated = table.Column<string>(type: "varchar(100)", nullable: true),
                     DictionaryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -154,13 +155,13 @@ namespace ASPNET.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SessionStatistics_DictionaryId",
-                table: "SessionStatistics",
+                name: "IX_Statistics_DictionaryId",
+                table: "Statistics",
                 column: "DictionaryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SessionStatistics_UserId",
-                table: "SessionStatistics",
+                name: "IX_Statistics_UserId",
+                table: "Statistics",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -177,15 +178,15 @@ namespace ASPNET.Migrations
                 name: "IX_Words_DictionaryId",
                 table: "Words",
                 column: "DictionaryId");
-			var sql = File.ReadAllText("Migrations\\OnCreateData.sql");
-			migrationBuilder.Sql(sql);
-		}
+            var sql = File.ReadAllText("Migrations\\OnCreateData.sql");
+            migrationBuilder.Sql(sql);
+        }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SessionStatistics");
+                name: "Statistics");
 
             migrationBuilder.DropTable(
                 name: "SubscribedDictionary");

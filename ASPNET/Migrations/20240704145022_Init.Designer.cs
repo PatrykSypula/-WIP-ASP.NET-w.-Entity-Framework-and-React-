@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPNET.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240630204200_Init")]
+    [Migration("20240704145022_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -33,14 +33,12 @@ namespace ASPNET.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("DictionaryDescription")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<int>("DictionaryLevelId")
                         .HasColumnType("int");
 
                     b.Property<string>("DictionaryName")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<int>("IsDefaultDictionary")
@@ -70,7 +68,6 @@ namespace ASPNET.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("DictionaryLevel")
-                        .IsRequired()
                         .HasColumnType("varchar(2)");
 
                     b.HasKey("Id");
@@ -78,7 +75,7 @@ namespace ASPNET.Migrations
                     b.ToTable("DictionaryLevelValues");
                 });
 
-            modelBuilder.Entity("ASPNET.Models.SessionStatistics", b =>
+            modelBuilder.Entity("ASPNET.Models.Statistics", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,7 +93,6 @@ namespace ASPNET.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Percentage")
-                        .IsRequired()
                         .HasColumnType("varchar(10)");
 
                     b.Property<string>("SessionDate")
@@ -112,7 +108,7 @@ namespace ASPNET.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("SessionStatistics");
+                    b.ToTable("Statistics");
                 });
 
             modelBuilder.Entity("ASPNET.Models.SubscribedDictionary", b =>
@@ -147,18 +143,15 @@ namespace ASPNET.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<int>("IsActive")
                         .HasColumnType("int");
 
                     b.Property<string>("Login")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
@@ -178,11 +171,9 @@ namespace ASPNET.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("WordPolish")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("WordTranslated")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
@@ -197,7 +188,7 @@ namespace ASPNET.Migrations
                     b.HasOne("ASPNET.Models.DictionaryLevelValues", "DictionaryLevelValues")
                         .WithMany("Dictionaries")
                         .HasForeignKey("DictionaryLevelId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ASPNET.Models.User", "User")
@@ -211,16 +202,16 @@ namespace ASPNET.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ASPNET.Models.SessionStatistics", b =>
+            modelBuilder.Entity("ASPNET.Models.Statistics", b =>
                 {
                     b.HasOne("ASPNET.Models.Dictionaries", "Dictionary")
-                        .WithMany("SessionStatistics")
+                        .WithMany("Statistics")
                         .HasForeignKey("DictionaryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ASPNET.Models.User", "User")
-                        .WithMany("SessionStatistics")
+                        .WithMany("Statistics")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
@@ -262,7 +253,7 @@ namespace ASPNET.Migrations
 
             modelBuilder.Entity("ASPNET.Models.Dictionaries", b =>
                 {
-                    b.Navigation("SessionStatistics");
+                    b.Navigation("Statistics");
 
                     b.Navigation("SubscribedDictionaries");
 
@@ -278,7 +269,7 @@ namespace ASPNET.Migrations
                 {
                     b.Navigation("Dictionaries");
 
-                    b.Navigation("SessionStatistics");
+                    b.Navigation("Statistics");
 
                     b.Navigation("SubscribedDictionaries");
                 });

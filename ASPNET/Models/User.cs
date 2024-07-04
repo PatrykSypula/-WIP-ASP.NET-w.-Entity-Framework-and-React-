@@ -17,7 +17,7 @@ namespace ASPNET.Models
         public int IsActive { get; set; }
 
         public List<Dictionaries> Dictionaries { get; set; } = new List<Dictionaries>();
-        public List<SessionStatistics> SessionStatistics { get; set; } = new List<SessionStatistics>();
+        public List<Statistics> Statistics { get; set; } = new List<Statistics>();
         public List<SubscribedDictionary> SubscribedDictionaries { get; set; } = new List<SubscribedDictionary>();
     }
 }

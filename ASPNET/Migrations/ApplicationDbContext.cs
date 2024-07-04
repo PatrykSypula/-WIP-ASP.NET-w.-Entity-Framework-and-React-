@@ -12,7 +12,7 @@ namespace ASPNET.Migrations
         }
         public DbSet<Dictionaries> Dictionaries { get; set; }
         public DbSet<Words> Words { get; set; }
-        public DbSet<SessionStatistics> SessionStatistics { get; set; }
+        public DbSet<Statistics> Statistics { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<SubscribedDictionary> SubscribedDictionary { get; set; }
 
@@ -24,7 +24,7 @@ namespace ASPNET.Migrations
                 .WithOne(w => w.Dictionary)
                 .HasForeignKey(w => w.DictionaryId);
 
-                cs.HasMany(d => d.SessionStatistics)
+                cs.HasMany(d => d.Statistics)
                 .WithOne(s => s.Dictionary)
                 .HasForeignKey(s => s.DictionaryId);
 
@@ -43,7 +43,7 @@ namespace ASPNET.Migrations
                 .WithOne(c => c.User)
                 .HasForeignKey(d => d.UserId);
 
-                us.HasMany(u => u.SessionStatistics)
+                us.HasMany(u => u.Statistics)
                 .WithOne(s => s.User)
                 .HasForeignKey(s => s.UserId)
                 .OnDelete(DeleteBehavior.NoAction);

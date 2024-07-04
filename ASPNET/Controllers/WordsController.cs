@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASPNET.Migrations;
 using ASPNET.Models;
+using NuGet.Packaging.Signing;
 
 namespace ASPNET.Controllers
 {
@@ -22,27 +23,8 @@ namespace ASPNET.Controllers
         // GET: Words
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Words.Include(w => w.Dictionary);
+            var applicationDbContext = _context.Dictionaries.Include(d => d.User).Include(d => d.Words).Include(d => d.DictionaryLevelValues);
             return View(await applicationDbContext.ToListAsync());
-        }
-
-    // GET: Words/Details/5
-    public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var words = await _context.Words
-                .Include(w => w.Dictionary)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (words == null)
-            {
-                return NotFound();
-            }
-
-            return View(words);
         }
 
         // GET: Words/Create
@@ -63,14 +45,21 @@ namespace ASPNET.Controllers
             {
                 _context.Add(words);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("EditDictionary", new { id = words.DictionaryId });
             }
             ViewData["DictionaryId"] = new SelectList(_context.Dictionaries, "Id", "Id", words.DictionaryId);
             return View(words);
         }
 
-        // GET: Words/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+		// GET: Words/Edit/5
+		public async Task<IActionResult> EditDictionary(int? id)
+        {
+			var applicationDbContext = _context.Words.Include(w => w.Dictionary).Where(w => w.DictionaryId == id);
+            return View(await applicationDbContext.ToListAsync());
+		}
+
+		// GET: Words/Edit/5
+		public async Task<IActionResult> EditWord(int? id)
         {
             if (id == null)
             {
@@ -91,7 +80,7 @@ namespace ASPNET.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,WordPolish,WordTranslated,DictionaryId")] Words words)
+        public async Task<IActionResult> EditWord(int id, [Bind("Id,WordPolish,WordTranslated,DictionaryId")] Words words)
         {
             if (id != words.Id)
             {
@@ -116,7 +105,7 @@ namespace ASPNET.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("EditDictionary", new { id = words.DictionaryId });
             }
             ViewData["DictionaryId"] = new SelectList(_context.Dictionaries, "Id", "Id", words.DictionaryId);
             return View(words);
@@ -153,7 +142,7 @@ namespace ASPNET.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("EditDictionary", new { id = words.DictionaryId });
         }
 
         private bool WordsExists(int id)

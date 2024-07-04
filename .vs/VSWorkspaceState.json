@@ -5,8 +5,9 @@
     "\\ASPNET\\Controllers",
     "\\ASPNET\\Migrations",
     "\\ASPNET\\Views",
-    "\\ASPNET\\Views\\Dictionaries"
+    "\\ASPNET\\Views\\Dictionaries",
+    "\\ASPNET\\Views\\Words"
   ],
-  "SelectedNode": "\\ASPNET\\Migrations\\ApplicationDbContext.cs",
+  "SelectedNode": "\\ASPNET\\Views\\Words\\Test.cshtml",
   "PreviewInSolutionExplorer": false
 }

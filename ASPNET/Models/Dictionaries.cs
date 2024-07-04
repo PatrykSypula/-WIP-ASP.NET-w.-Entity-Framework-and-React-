@@ -25,6 +25,6 @@ namespace ASPNET.Models
         public DictionaryLevelValues DictionaryLevelValues { get; set; }
         public List<SubscribedDictionary> SubscribedDictionaries { get; set; } = new List<SubscribedDictionary>();
         public List<Words> Words { get; set; } = new List<Words>();
-        public List<SessionStatistics> SessionStatistics { get; set; } = new List<SessionStatistics>();
+        public List<Statistics> Statistics { get; set; } = new List<Statistics>();
     }
 }
